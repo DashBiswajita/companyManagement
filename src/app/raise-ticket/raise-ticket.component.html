@@ -1,0 +1,46 @@
+<div class="container  bg-light form-control">
+    <header ><h3>Raise a Ticket</h3></header>
+    <form novalidate (ngSubmit)='ticketSubmit()' [formGroup]="ticketRaiseForm" class="form">
+        <div class="form-group required">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" formControlName="name">
+            <div *ngIf="!name?.valid && (name?.touched || name?.dirty)">
+                <span>{{errors.required}}</span>
+            </div>
+        </div>
+        <div class="form-group required">
+            <label for="contact" class="form-label">Contact</label>
+            <input type="text" class="form-control" id="contact" name="contact" formControlName="contact">
+            <div *ngIf="!contact?.valid && (contact?.touched || contact?.dirty)">
+                <span>{{errors.mobile}}</span>
+                <span>{{contact.errors}}</span>
+            </div>
+        </div>
+        <div class="form-group required">
+            <label for="emailId" class="form-label">Email ID</label>
+            <input type="email" class="form-control" id="emailId" name="emailId" formControlName="emailId">
+            <div *ngIf="!emailId?.valid && (emailId?.touched || emailId?.dirty)">
+                <span>{{errors.email}}</span>
+            </div>
+        </div>
+        <div class="form-group required">
+            <label for="issueDesc" class="form-label">Issue Description</label>
+            <input type="textarea" class="form-control" id="issueDesc" name="issueDesc" formControlName="issueDesc">
+            <div *ngIf="!issueDesc?.valid && (issueDesc?.touched || issueDesc?.dirty)">
+                <span>{{errors.required}}</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="addnlDet" class="form-label">Additional Details</label>
+            <input type="textarea" class="form-control" id="addnlDet" name="addnlDet" formControlName="addnlDet">
+        </div>
+        <div class="form-group">
+            <label for="image" class="form-label">Additional Details</label>
+            <input type="file" class="form-control" id="image" name="image" formControlName="image">
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-success mt-3" [disabled]="!ticketRaiseForm?.valid">Submit</button>
+            <button type="button" class="btn btn-success mt-3" (click)="onCancel()">Cancel</button>
+        </div>
+    </form>
+</div>

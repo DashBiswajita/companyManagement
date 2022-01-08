@@ -1,0 +1,50 @@
+[
+    {
+        "id" : 1,
+        "country" : "India",
+        "city" : [
+            {
+                "id" : 1,
+                "name" : "Bhubaneswar"
+            },
+            {
+                "id" : 2,
+                "name" : "Delhi"
+            },
+            {
+                "id" : 3,
+                "name" : "Kolkata"
+            },
+            {
+                "id" : 4,
+                "name" : "Mumbai"
+            },
+            {
+                "id" : 5,
+                "name" : "Pune"
+            }
+        ]
+    },
+    {
+        "id" : 2,
+        "country" : "Germany",
+        "city" : [
+            {
+                "id" : 6,
+                "name" : "Berlin"
+            },
+            {
+                "id" : 7,
+                "name" : "Hamburg"
+            },
+            {
+                "id" : 8,
+                "name" : "Munich"
+            },
+            {
+                "id" : 9,
+                "name" : "Cologne"
+            }
+        ]
+    }
+]

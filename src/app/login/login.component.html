@@ -1,0 +1,28 @@
+<div class="container login">
+    <main class="d-flex justify-content-center align-items-center bg-light py-3 main">
+        <form [formGroup] = 'loginForm' novalidate (ngSubmit)='onSubmit()' class="loginForm">
+             <div class="form-group">
+                <label for="userName" class="form-label">User Name</label>
+                <input type="text" class="form-control"  id="userName" name="userName" formControlName='userName'>
+             </div>
+             <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" formControlName='password'>
+             </div>
+             <div class="buttonDiv row mt-2">
+                 <div class="col-6 text-start">
+                    <button type="button" class="btn btn-secondary ml-2" title="Sign Up" (click)="onSignUp()">Sign Up</button>
+                 </div>
+                <div class="col-6 text-end">
+                    <button type="submit" class="btn btn-primary ml-2" title="Submit" [disabled]="!loginForm.valid">Submit</button>
+                </div>
+                
+             </div>
+             
+        </form>
+    </main>
+    <footer class="page-footer font-small bg-secondary mt-3 footer d-flex justify-content-center align-items-center">
+        <div class="footer-copyright text-center py-1"><span>@copyright</span></div>
+        
+    </footer>
+</div>

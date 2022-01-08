@@ -1,0 +1,20 @@
+.details,.form {
+    background-color: rgb(9, 118, 155,0.8);
+    padding: 1rem;
+    margin : 1rem;
+}
+@mixin requiredField {
+    label::after{
+        content: " *";
+        color: red;
+    }
+}
+.required{
+    @include requiredField()
+}
+input:invalid,select:invalid{
+   border: 1px solid red;
+}
+span {
+    color: red;
+}

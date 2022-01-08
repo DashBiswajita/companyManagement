@@ -1,0 +1,7 @@
+{
+    "required" : "The field is requied.",
+    "minLength" : "Minimum length is not matching.",
+    "maxLength" : "Maximum length is not matching.",
+    "email" : "Please provide a valid email.",
+    "mobile" : "Please provide a valid mobile number."
+}

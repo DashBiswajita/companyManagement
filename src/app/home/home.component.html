@@ -1,0 +1,88 @@
+<div class="container d-flex align-items-start mt-3 home">
+    <div class="container details">
+        <nav>
+            <ul class="nav nav-tabs bg-light">
+                <li class="nav-item"><a [routerLink] = "['/','home','domestic']" class="nav-link text-dark">Domestic</a></li>
+                <li class="nav-item"><a [routerLink] = "['/','home','international']" class="nav-link text-dark">International</a></li>
+                <li class="nav-item"><a [routerLink] = "['/','home','corporate']" class="nav-link text-dark">Corporate</a></li>
+            </ul>
+        </nav>
+        <div class="container mt-1"><router-outlet></router-outlet></div>
+    </div>
+    <div class="container  bg-light form-wrapper">
+        <header ><h3>Get a Free Quote</h3></header>
+        <form novalidate (ngSubmit)='quoteSubmit()' [formGroup]="qouteSubmitForm" class="form">
+            <div class="form-group required">
+                <label for="location" class="form-label">Location</label>
+                <select  class="form-control" id="location" name="location" formControlName="location">
+                    <option value="">Select</option>
+                    <option *ngFor="let loc of locations" [ngValue]=loc.id>{{loc.country}}</option>
+                </select>
+                <div *ngIf="!location?.valid && (location?.touched || location?.dirty)">
+                    <span>{{errors.required}}</span>
+                </div>
+            </div>
+            <div class="form-group required">
+                <label for="serviceType" class="form-label">Service Type</label>
+                <select class="form-control" id="serviceType" name="serviceType" formControlName="serviceType">
+                    <option value="">Select</option>
+                    <option *ngFor="let ser of services" [ngValue]=ser.id>{{ser.type}}</option>
+                </select>
+                <div *ngIf="!serviceType?.valid && (serviceType?.touched || serviceType?.dirty)">
+                    <span>{{errors.required}}</span>
+                </div>
+            </div>
+            <div class="form-group required">
+                <label for="movingFrom" class="form-label">Moving From</label>
+                <select type="text" class="form-control" id="movingFrom" name="movingFrom" formControlName="movingFrom">
+                    <option value="">Select</option>
+                    <option *ngFor="let city of cities" [ngValue]=city.id>{{city.name}}</option>
+                </select>
+                <div *ngIf="!movingFrom?.valid && (movingFrom?.touched || movingFrom?.dirty)">
+                    <span>{{errors.required}}</span>
+                </div>
+            </div>
+            <div class="form-group required">
+                <label for="movingTo" class="form-label">Moving To</label>
+                <select  class="form-control" id="movingTo" name="movingTo" formControlName="movingTo">
+                    <option value="">Select</option>
+                    <option *ngFor="let movCity of movingToCities" [ngValue]=movCity.id>{{movCity.name}}</option>
+                </select>
+                <div *ngIf="!movingTo?.valid && (movingTo?.touched || movingTo?.dirty)">
+                    <span>{{errors.required}}</span>
+                </div>
+            </div>
+            <div class="form-group required">
+                <label for="movingOn" class="form-label">Moving on</label>
+                <input type="date" class="form-control" id="movingOn" name="movingOn" formControlName="movingOn">
+                <div *ngIf="!movingOn?.valid && (movingOn?.touched || movingOn?.dirty)">
+                    <span>{{errors.required}}</span>
+                </div>
+            </div>
+            <div class="form-group required">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" formControlName="name">
+                <div *ngIf="!name?.valid && (name?.touched || name?.dirty)">
+                    <span>{{errors.required}}</span>
+                </div>
+            </div>
+            <div class="form-group required">
+                <label for="mobile" class="form-label">Mobile</label>
+                <input type="text" class="form-control" id="mobile" name="mobile" formControlName="mobile">
+                <div *ngIf="!mobile?.valid && (mobile?.touched || mobile?.dirty)">
+                    <span>{{errors.mobile}}</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="emailId" class="form-label">Email ID</label>
+                <input type="email" class="form-control" id="emailId" name="emailId" formControlName="emailId">
+                <div *ngIf="!emailId?.valid && (emailId?.touched || emailId?.dirty)">
+                    <span>{{errors.email}}</span>
+                </div>
+            </div>
+            <div class="text-end">
+                <button type="submit" class="btn btn-success mt-3" [disabled]="!qouteSubmitForm?.valid">Get Quote</button>
+            </div>
+        </form>
+    </div>
+</div> 

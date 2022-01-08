@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <span class="text-info mx-3">Welcome to {{companyName}}</span>
+   <button (click)= "toggleClick()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarAct" aria-controls="navbarAct" aria-expanded="false" aria-label="Toggle Navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="navbar-collapse collapse d-flex flex-wrap" [ngClass]="{show : toggle}" id="navbarAct">
+     <ul class="navbar-nav mr-auto text-start justify-self-start">
+        <li class="navbar-item" *ngIf="!isLoggedIn">
+           <a class='nav-link' [routerLink]="['logIn']" routerLinkActive='active'>Login</a>
+        </li>
+        <li class="navbar-item" *ngIf="isLoggedIn">
+          <a class='nav-link' [routerLink]="['home']" routerLinkActive='active'>Home</a>
+        </li>
+        <li class="navbar-item" *ngIf="isLoggedIn">
+          <a class='nav-link' [routerLink]="['about']" routerLinkActive='active'>About</a>
+        </li>
+        <li class="navbar-item" *ngIf="isLoggedIn">
+          <a class='nav-link' [routerLink]="['contact']" routerLinkActive='active'>Contacts</a>
+        </li>
+        <li class="navbar-item" *ngIf="isLoggedIn">
+          <a class='nav-link' [routerLink]="['home']" routerLinkActive='active'>Submit a Review</a>
+        </li>
+     </ul>
+     <form class="form-inline d-flex" *ngIf="isLoggedIn">
+       <input type="search" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+       <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+     </form>
+   </div>
+</nav>
+<router-outlet></router-outlet>

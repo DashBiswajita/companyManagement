@@ -1,0 +1,14 @@
+{
+    "office" :{
+    "id" : 1,
+    "address" : "khsjkhdjahs bjdbasjbdj vdhajhsdha",
+    "mobile" : "1234567890",
+    "email" : "abc@abc.com"
+    },
+    "tracking" : {
+    "id" : 2,
+    "address" : "khsjkhdjahs bjdbasjbdj vdhajhsdha",
+    "mobile" : "3453523489",
+    "email" : "abcd@abc.com"
+    }
+}

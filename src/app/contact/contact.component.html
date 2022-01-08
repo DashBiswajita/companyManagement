@@ -1,0 +1,40 @@
+<div class="container mt-5 body">
+    <div class="card">
+        <header class="card-header">Contact Details</header>
+        <div class="card-body">
+            <div class="d-flex-column card-inner-body">
+                <div class="py-1 my-3">
+                    <div class="card-title">Office Details</div>
+                    <div class="row">
+                        <div class="col-6">Company Address</div>
+                        <div class="col-6">{{contact.office.address}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">Mobile Number</div>
+                        <div class="col-6">{{contact.office.mobile}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">Email ID</div>
+                        <div class="col-6">{{contact.office.email}}</div>
+                    </div>
+                </div>
+                <div class="py-1 my-3">
+                    <div class="card-title">Tracking Details</div>
+                    <div class="row">
+                        <div class="col-6">Company Address</div>
+                        <div class="col-6">{{contact.tracking.address}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">Mobile Number</div>
+                        <div class="col-6">{{contact.tracking.mobile}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">Email ID</div>
+                        <div class="col-6">{{contact.tracking.email}}</div>
+                    </div>
+                </div>
+                <div class="text-center"><a class="text-white" [routerLink]="['/ticketRaise']" routerLinkActive="active">Raise a Ticket</a></div>
+            </div>
+        </div>
+    </div>
+</div>
